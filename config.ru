@@ -10,6 +10,7 @@ if ENV['RACK_ENV'] == "development"
 end
 
 require 'redirector'
+require 'redirector/file_redirector'
 
 #run Proc.new {|env| [200, {"Content-Type" => "text/html"}, ["Hello Rack!"]]}
-run Redirector::URIRedirector.new("test")
+run Redirector::URIRedirector.new(nil,:handler => Redirector::FileRedirector.new("localhost:11211" ))
