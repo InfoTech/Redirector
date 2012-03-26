@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
 	
-  s.requirements << "If using the "
+	#  s.requirements << ""
   
 	#s.add_dependency('dalli')
 	#s.add_runtime_dependency "memcache"
