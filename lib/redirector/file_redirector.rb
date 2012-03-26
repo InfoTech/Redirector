@@ -1,8 +1,10 @@
+require 'csv'
+
 module Redirector
 	class FileRedirector
 
-		def initialize(file_path = "")
-			@redirect_hash ||= {"/dave" => "/test"} #load_redirects_from_file
+		def initialize(file_path = "/home/rails/Desktop/retired_internal_links.csv")
+			@redirect_hash ||= load_redirects_from_file(file_path)
 		end
 
 		def redirect_uri string
@@ -11,9 +13,12 @@ module Redirector
 
 		private
 		
-		def load_redirects_from_file
+		def load_redirects_from_file(file_path)
 			#TODO impliment	
+			redirect_array = CSV.read(file_path)
+			puts "here #{redirect_array}"
+			@redirect_hash = Hash[redirect_array]
+			puts "here #{@redirect_hash}"
 		end
-
 	end
 end
