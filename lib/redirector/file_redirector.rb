@@ -16,7 +16,6 @@ module Redirector
 		end
 
 		def redirect_uri string
-			#TODO only return a value if it looks valid
 			value = @redirect_hash[string]
 			invalid_url?(value) ? nil : value
 		end
