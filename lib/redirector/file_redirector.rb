@@ -31,7 +31,7 @@ module Redirector
 			end
 		end
 
-		def invalid_looking_url value
+		def invalid_url? value
 			#TODO determine a good way to check if a url is invalid.
 			value.nil? || value.strip.empty?
 		end
