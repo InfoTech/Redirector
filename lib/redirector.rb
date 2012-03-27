@@ -1,2 +1,2 @@
 require 'redirector/version'
-require 'redirector/base'
+require 'redirector/uri_redirector'

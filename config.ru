@@ -13,4 +13,4 @@ require 'redirector'
 require 'redirector/file_redirector'
 
 #run Proc.new {|env| [200, {"Content-Type" => "text/html"}, ["Hello Rack!"]]}
-run Redirector::URIRedirector.new(nil,:handler => Redirector::FileRedirector.new("localhost:11211" ))
+run Redirector::URIRedirector.new(nil,:handler => Redirector::FileRedirector.new(File.dirname(__FILE__) + "/../uri_redirects.csv" ))
