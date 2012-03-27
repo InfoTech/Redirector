@@ -9,8 +9,7 @@ module Redirector
 		attr_reader :redirect_hash
 
 		def initialize(file_path)
-			puts "\n\n#{file_path}\n\n"
-			raise ArgumentError, "FileRedirector expects a valid existing file" unless valid_file_path?(file_path)
+			raise ArgumentError, "FileRedirector expects a valid existing file. File path given was [ #{file_path} ]" unless valid_file_path?(file_path)
 			@redirect_hash ||= load_redirects_from_file(file_path)
 			puts redirect_hash
 		end
@@ -31,12 +30,12 @@ module Redirector
 			end
 		end
 
-		def invalid_url? value
+		def invalid_url?(value)
 			#TODO determine a good way to check if a url is invalid.
 			value.nil? || value.strip.empty?
 		end
 
-		def valid_file_path? file_path
+		def valid_file_path?(file_path)
 			File.exists?(file_path) && !File.directory?(file_path)
 		end
 	end
