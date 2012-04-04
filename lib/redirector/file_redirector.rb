@@ -11,7 +11,6 @@ module Redirector
 		def initialize(file_path)
 			raise ArgumentError, "FileRedirector expects a valid existing file. File path given was [ #{file_path} ]" unless valid_file_path?(file_path)
 			@redirect_hash ||= load_redirects_from_file(file_path)
-			puts redirect_hash
 		end
 
 		def redirect_uri string

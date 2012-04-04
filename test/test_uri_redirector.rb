@@ -27,7 +27,6 @@ class TestURIRedirector < MiniTest::Unit::TestCase
 		arr_of_arrs = CSV.read(file)
 		hash = Hash[arr_of_arrs]
 		assert File.exist?(file)
-		puts "HASH = #{hash}"
 		assert_equal 1,1
 	end
 =end
