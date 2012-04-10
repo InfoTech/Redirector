@@ -22,7 +22,7 @@ module Redirector
 		
 		def load_redirects_from_file(file_path)
 			begin
-				arr_of_arrs = CSV.read(file_path)
+				arr_of_arrs = CSV.read(file_path, :col_sep => " ")
 				@redirect_hash = Hash[arr_of_arrs]
 			rescue => e
 				raise CSVError, "Problem reading csv file [ #{e.message} ]"
