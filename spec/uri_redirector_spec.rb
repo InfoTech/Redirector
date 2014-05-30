@@ -3,7 +3,7 @@ require 'redirector/file_redirector'
 
 describe "Load hash" do
 	before do
-	  @file_path = "/home/infotech/Redirector/spec/uri_redirects.csv"
+	  @file_path = File.expand_path('../uri_redirects.csv', __FILE__)
 	end
 
 	describe Redirector::FileRedirector do
