@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["David Vallance", "Steve Donovan"]
   s.email       = ["dvallance@infotech.com", "sdonovan@infotech.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = "CSV configured redirect URLs"
+  s.description = "Builds redirection rules from a map of paths to redirection URLs from a CSV configuration file"
 
   s.rubyforge_project = "redirector"
 
