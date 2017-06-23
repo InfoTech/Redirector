@@ -1,18 +1,15 @@
-require 'minitest/autorun'
 require 'redirector'
 require 'redirector/file_redirector'
 
 describe "Load hash" do
 	before do
-	  #@file_path = "/home/rails/Desktop/spec.csv"
+	  @file_path = File.expand_path('../uri_redirects.csv', __FILE__)
 	end
 
 	describe Redirector::FileRedirector do
 		it "#redirect_uri should load values" do
-=begin
-			where = Redirector::FileRedirector.new(@file_path).redirect_uri("john")
-		  where.must_equal("frank")
-=end
+			where = Redirector::FileRedirector.new(@file_path).redirect_uri("/midwest")
+		  	where.should == "http://solutions.infotech.com/MidwestHomePage.html"
 		end
 	end
 end
